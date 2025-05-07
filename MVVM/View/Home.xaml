@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="BubblyChat.MVVM.View.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:BubblyChat.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="730"
+             d:DesignWidth="1030"
+             Background="AliceBlue"
+             Style="{StaticResource Page_Style}">
+
+    <UserControl.DataContext>
+        <vm:HomeVM/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+           
+    </Grid>
+</UserControl>

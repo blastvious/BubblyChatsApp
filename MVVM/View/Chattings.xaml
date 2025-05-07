@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="BubblyChat.MVVM.View.Chattings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:BubblyChat.MVVM.ViewModel"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="730" 
+             d:DesignWidth="1030"
+             Style="{StaticResource Page_Style}"
+             Background="#36393f">
+    
+    <UserControl.DataContext>
+        <vm:ChattingVM/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#2f3136">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Label Add Contact-->
+            <Label Content="Contacts"
+                   VerticalAlignment="Center"
+                   FontSize="18"
+                   FontWeight="Medium"
+                   Foreground="Gray"
+                   Margin="10 0 0 0"/>
+            <ListView x:Name="Contact" ItemsSource="{Binding Contacts}" 
+                    SelectedItem="{Binding SelectedContact}"
+                  Background="Transparent"
+                  BorderThickness="0" 
+                  Grid.Row="1"
+                  ItemContainerStyle="{StaticResource ContactCard}"  />
+
+            
+            <!--User Account-->
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal"
+                        Background="#292b2f">
+                <Border CornerRadius="30"
+                        Width="40"
+                        Height="40"
+                        Background="#3bff6f"
+                        Margin="20 0 0 0"/>
+                <StackPanel VerticalAlignment="Center">
+                    <Label Content="{Binding OwnUser}"
+                           Foreground="Gray"
+                           FontWeight="Medium"
+                           FontSize="12"
+                           Margin="0 -5 0 -5"/>
+                    <Label Content="Custom Status"
+                           Foreground="Gray"
+                           FontWeight="Medium"
+                           FontSize="12"
+                           Margin="0 -5 0 -5"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="#2f3136" BorderThickness="0 0 0 2">
+                <Grid HorizontalAlignment="Stretch"
+                      Margin="8">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="30" Width="30">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding SelectedContact.ImageSource}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Label Content="{Binding SelectedContact.Username}"
+                               Foreground="White"
+                               FontWeight="Bold"
+                               Margin="5 0 5 0"
+                               VerticalAlignment="Center"/>
+
+                    </StackPanel>
+
+
+
+
+                    <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+
+                        <Button x:Name="btnCall" Style="{StaticResource tboxButton}">
+
+                            <Icon:PackIconMaterial Kind="Phone" Foreground="Black" Height="20" Width="20"  />
+                        </Button>
+
+                        <Button x:Name="btnVideo" Style="{StaticResource tboxButton}">
+
+                            <Icon:PackIconMaterial Kind="Video" Foreground="Black" Height="20" Width="20"  />
+                        </Button>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <ListView ItemsSource="{Binding SelectedContact.Messages}"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      ItemContainerStyle="{StaticResource ChatItem}"
+                      Margin="8 0 0 0"
+                      Grid.Row="1"/>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="90"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Row="1"
+                         Height="50"
+                         Text="Message @Username"
+                         Style="{StaticResource MessageBox}"
+                         Grid.ColumnSpan="2"/>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Grid.Column="1"
+                            Margin="0 0 16 0">
+
+                    <Button x:Name="btnPlus" Style="{StaticResource tboxButton}" >
+                        <Icon:PackIconMaterial Kind="Paperclip" Foreground="Black" Width="20" Height="20"  />
+                    </Button>
+
+                    <Button x:Name="btnSend" Style="{StaticResource tboxButton}" Command="{Binding SendCommand}" >
+                        <Icon:PackIconMaterial Kind="Send" Foreground="Black" Width="20" Height="20" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</UserControl>

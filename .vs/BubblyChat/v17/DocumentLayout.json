@@ -1,0 +1,60 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\DoAn\\Chat\\BubblyChat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EAF71620-21ED-4D30-BECB-98DF0D09EE03}|BubblyChatClient.csproj|e:\\doan\\chat\\bubblychat\\mvvm\\view\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EAF71620-21ED-4D30-BECB-98DF0D09EE03}|BubblyChatClient.csproj|solutionrelative:mvvm\\view\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAF71620-21ED-4D30-BECB-98DF0D09EE03}|BubblyChatClient.csproj|e:\\doan\\chat\\bubblychat\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EAF71620-21ED-4D30-BECB-98DF0D09EE03}|BubblyChatClient.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 382,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "E:\\DoAn\\Chat\\BubblyChat\\MVVM\\View\\LoginView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\LoginView.xaml",
+              "ToolTip": "E:\\DoAn\\Chat\\BubblyChat\\MVVM\\View\\LoginView.xaml",
+              "RelativeToolTip": "MVVM\\View\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-07T10:13:29.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\DoAn\\Chat\\BubblyChat\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "E:\\DoAn\\Chat\\BubblyChat\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-07T09:47:20.805Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

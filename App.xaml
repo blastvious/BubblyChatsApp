@@ -1,0 +1,26 @@
+﻿<Application x:Class="BubblyChat.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BubblyChat"
+             StartupUri="MVVM\View\LoginView.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Core/DataTemplate.xaml"/>
+                <ResourceDictionary Source="Styles/ChatItem.xaml"/>
+                <ResourceDictionary Source="Styles/ContactCard.xaml"/>
+                <ResourceDictionary Source="/Core/DataTemplate.xaml"/>
+                <ResourceDictionary Source="Styles/Page.xaml"/>
+                <ResourceDictionary Source="Styles/WindowPage.xaml"/>
+                <ResourceDictionary Source="Styles/MessageBox.xaml"/>
+                <ResourceDictionary Source="Styles/Text.xaml"/>
+                <ResourceDictionary Source="Styles/Button.xaml"/>
+                <ResourceDictionary Source="Styles/NavigateButton.xaml"/>
+                <ResourceDictionary Source="Styles/textboxButton.xaml"/>
+                <ResourceDictionary Source="Styles/StylishScrollBar.xaml"/>
+                <ResourceDictionary Source="Styles/WindowButton.xaml"/>
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
