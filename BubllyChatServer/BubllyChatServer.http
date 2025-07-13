@@ -1,0 +1,6 @@
+@BubllyChatServer_HostAddress = http://localhost:5136
+
+GET {{BubllyChatServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,42 @@
+﻿<Window x:Class="BubllyChat.MVVM.View.GroupCallView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BubllyChat.MVVM.View"
+        mc:Ignorable="d"
+        Title="GroupCallView" Height="450" Width="800">
+    <Grid Background="#111">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Toolbar -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Toggle Camera" Command="{Binding ToggleCameraCommand}" Margin="5"/>
+            <Button Content="Toggle Mic" Command="{Binding ToggleMicCommand}" Margin="5"/>
+            <Button Content="Share Screen" Command="{Binding ShareScreenCommand}" Margin="5"/>
+            <Button Content="Leave Call" Command="{Binding LeaveCallCommand}" Margin="5"/>
+        </StackPanel>
+
+        <!-- Video Grid -->
+        <ItemsControl ItemsSource="{Binding RemotePeers}" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Width="240" Height="160">
+                        <Grid>
+                            <Image Source="{Binding VideoSource}" 
+                       Stretch="UniformToFill"
+                       Width="240" Height="160" />
+                            <TextBlock Text="{Binding ConnectionId}" Foreground="White" 
+                           Background="#66000000" Padding="3" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+    </Grid>
+</Window>

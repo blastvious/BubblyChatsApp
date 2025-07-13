@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\1.JPG" />
+    <None Remove="Images\2.JPG" />
+    <None Remove="Images\3.JPG" />
+    <None Remove="Images\4.JPG" />
+    <None Remove="Images\5.JPG" />
+    <None Remove="Images\6.JPG" />
+    <None Remove="Images\7.JPG" />
+    <None Remove="Images\BG.jpg" />
+    <None Remove="Images\Bubble.jpg" />
+    <None Remove="Images\room.png" />
+    <None Remove="Images\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.net" Version="4.1.0" />
+    <PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
+    <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="9.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.Json" Version="9.0.7" />
+    <PackageReference Include="Microsoft.MixedReality.WebRTC" Version="2.0.2" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\1.JPG" />
+    <Resource Include="Images\2.JPG" />
+    <Resource Include="Images\3.JPG" />
+    <Resource Include="Images\4.JPG" />
+    <Resource Include="Images\5.JPG" />
+    <Resource Include="Images\6.JPG" />
+    <Resource Include="Images\7.JPG" />
+    <Resource Include="Images\BG.jpg" />
+    <Resource Include="Images\Bubble.jpg" />
+    <Resource Include="Images\room.png" />
+    <Resource Include="Images\user.png" />
+  </ItemGroup>
+	<Target Name="CopyNativeWebRTCDlls" AfterTargets="Build">
+		<ItemGroup>
+			<NativeDlls Include="$(UserProfile)\.nuget\packages\microsoft.mixedreality.webrtc\2.0.2\runtimes\win-x64\native\*.dll" />
+		</ItemGroup>
+		<Copy SourceFiles="@(NativeDlls)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+	</Target>
+
+
+</Project>
